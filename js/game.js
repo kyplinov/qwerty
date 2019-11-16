@@ -50,8 +50,10 @@ function drawGame() {  //функция отрисовки поля
     }
 
     for (let k = 1; k < snake.length; k++) { // проверяем столкновение головы змейки с телом
-        if (snake[0].x == snake[k].x && snake[0].y == snake[k].y) // сравниваем координаты первого квадрата с координатами других квадратов
+        if (snake[0].x == snake[k].x && snake[0].y == snake[k].y) {// сравниваем координаты первого квадрата с координатами других квадратов
             document.getElementById("game-over").style.display = "block"; // выслывающее окно конца игры
+            clearInterval(game); // очищаем интервал(остановка игры)
+        }
     }
 
 
